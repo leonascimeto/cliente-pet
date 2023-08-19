@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.hibernate.validator.constraints.br.CPF;
 
 import br.com.petz.clientepet.cliente.application.api.ClienteRequest;
+import br.com.petz.clientepet.cliente.application.api.ClienteUpdateRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -58,5 +59,15 @@ public class Cliente {
 		this.cpf = clienteRequest.getCpf();
 		this.aceitaTermos = clienteRequest.getAceitaTermos();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(ClienteUpdateRequest clienteUpdateRequest) {
+		this.nomeCompleto = clienteUpdateRequest.getNomeCompleto();
+		this.celular = clienteUpdateRequest.getCelular();
+		this.telefone = clienteUpdateRequest.getNomeCompleto();
+		this.sexo = clienteUpdateRequest.getSexo();
+		this.dataNascimento = clienteUpdateRequest.getDataNascimento();
+		this.aceitaTermos = clienteUpdateRequest.getAceitaTermos();
+		this.dataNascimento = clienteUpdateRequest.getDataNascimento();
 	}
 }
