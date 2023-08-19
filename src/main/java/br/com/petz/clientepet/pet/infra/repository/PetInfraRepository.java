@@ -29,5 +29,13 @@ public class PetInfraRepository implements PetRepository {
 		log.info("[end] PetInfraRepository - listAllPetsClient");
 		return pets;
 	}
+	@Override
+	public Pet findPetById(UUID idPet) {
+		log.info("[start] PetInfraRepository - findPetById");
+		Pet pet = petSpringDataJPARepository.findById(idPet)
+				.orElseThrow(() -> new RuntimeException("Pet não encontrado!"));
+		log.info("[end] PetInfraRepository - findPetById");
+		return pet;
+	}
 
 }
