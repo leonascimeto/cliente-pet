@@ -4,17 +4,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.hibernate.validator.constraints.br.CPF;
-
-import br.com.petz.clientepet.cliente.application.api.ClienteRequest;
-import br.com.petz.clientepet.cliente.application.api.ClienteUpdateRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
