@@ -9,6 +9,7 @@ import br.com.petz.clientepet.cliente.application.service.ClienteService;
 import br.com.petz.clientepet.pet.application.api.PetDetailResponse;
 import br.com.petz.clientepet.pet.application.api.PetRequest;
 import br.com.petz.clientepet.pet.application.api.PetResponse;
+import br.com.petz.clientepet.pet.application.api.PetUpdateRequest;
 import br.com.petz.clientepet.pet.application.api.PetsClienteResponse;
 import br.com.petz.clientepet.pet.application.repository.PetRepository;
 import br.com.petz.clientepet.pet.domain.Pet;
@@ -56,6 +57,16 @@ public class PetApplicationService implements PetService {
 		Pet pet = petRepository.findPetById(idPet);
 		petRepository.deleteById(pet);
 		log.info("[end] PetApplicationService - deletePetById");
+	}
+
+	@Override
+	public void updatePet(UUID idCliente, UUID idPet, PetUpdateRequest petUpdateRequest) {
+		log.info("[start] PetApplicationService - updatePet");
+		clienteService.buscaClientePeloId(idCliente);
+		Pet pet = petRepository.findPetById(idPet);
+		pet.update(petUpdateRequest);
+		petRepository.salvaPet(pet);
+		log.info("[end] PetApplicationService - updatePet");
 	}
 
 }
