@@ -42,10 +42,8 @@ public class ClienteInfraRepository implements ClienteRepository {
 	}
 
 	@Override
-	public void deletaClientePeloId(UUID idCliente) {
+	public void deletaCliente(Cliente cliente) {
 		log.info("[inicializa] ClienteInfraRepository - buscaClientePeloId");
-		Cliente cliente =  clienteSpringDataJPARepository.findById(idCliente)
-				.orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));
 		clienteSpringDataJPARepository.delete(cliente);
 		log.info("[finaliza] ClienteInfraRepository - buscaClientePeloId");
 	}

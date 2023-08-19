@@ -12,5 +12,5 @@ public interface ClienteRepository {
 
 	Cliente buscaClientePeloId(UUID idCliente);
 
-	void deletaClientePeloId(UUID idCliente);
+	void deletaCliente(Cliente cliente);
 }
