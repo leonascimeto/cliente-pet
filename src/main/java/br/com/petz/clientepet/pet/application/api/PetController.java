@@ -42,4 +42,11 @@ public class PetController implements PetApi {
 		return pet;
 	}
 
+	@Override
+	public void deletePetById(UUID idCliente, UUID idPet) {
+		log.info("[start] PetController - deletePetById");
+		petService.deletePetById(idCliente, idPet);
+		log.info("[end] PetController - deletePetById");
+	}
+
 }
