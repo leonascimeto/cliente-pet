@@ -1,7 +1,6 @@
 package br.com.petz.clientepet.pet.application.api;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import br.com.petz.clientepet.pet.domain.Porte;
 import br.com.petz.clientepet.pet.domain.SexoPet;
