@@ -29,7 +29,7 @@ public class Pet {
 	private UUID idPet;
 	@NotNull
 	@Column(columnDefinition = "uuid", name = "idClienteTutor", nullable = false)
-	private UUID idClenteTutor;
+	private UUID idClienteTutor;
 	@NotBlank
 	private String nome;
 	@NotNull
@@ -53,7 +53,7 @@ public class Pet {
 	private LocalDateTime dataHotaDaUltimaAlteracao;
 	
 	public Pet(UUID idCliente, @Valid PetRequest petRequest) {
-		this.idClenteTutor = idCliente;
+		this.idClienteTutor = idCliente;
 		this.nome = petRequest.getNome();
 		this.porte = petRequest.getPorte();
 		this.tipo = petRequest.getTipo();
